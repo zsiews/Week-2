@@ -29,6 +29,10 @@ a {
   transition: opacity 300ms ease;
 }
 
+a:hover {
+  opacity: 0.7;
+}
+
 h1 {
   font-size: 36px;
 }
@@ -80,9 +84,10 @@ li {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 12px;
 }
 
-.text--purple {
+.text--red {
   color: #fd3636;
 }
 
@@ -175,6 +180,21 @@ nav {
   overflow: hidden;
   box-shadow: 0 18px 16px rgba(0, 0, 0, 0.16);
   margin-bottom: 28px;
+  animation: animate-pfp 800ms 200ms backwards;
+}
+
+@keyframes animate-pfp {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .about-me__picture {
@@ -185,11 +205,17 @@ nav {
 
 .about-me__info--title {
   margin-bottom: 16px;
+  animation: fade-up 650ms 300ms backwards;
 }
 
 .about-me__info--para {
   font-size: 20px;
   margin-bottom: 28px;
+  animation: fade-up 650ms 600ms backwards;
+}
+
+.about-me__links {
+  animation: fade-up 650ms 800ms backwards;
 }
 
 .about-me__link {
@@ -197,6 +223,17 @@ nav {
   color: black;
   text-decoration: none;
   padding: 0 16px;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .about-me__img--container {
@@ -208,8 +245,17 @@ nav {
 
 .about-me__img {
   width: 100%;
+  animation: fade-up 650ms 800ms backwards;
 }
 
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* 
 
 TECH STACK
@@ -404,4 +450,95 @@ footer {
 .footer__anchor:hover .footer__logo--popper {
   transform: translateX(60px);
   opacity: 1;
+}
+
+/* 
+
+DEVICE RESPONSIVENESS
+
+*/
+
+@media (max-width: 768px) {
+  nav {
+    height: 68px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .about-me__info--para {
+    font-size: 18px;
+  }
+
+  .language {
+    width: calc(100% / 2);
+  }
+
+  .project__description--para {
+    font-size: 14px;
+  }
+
+  .project__description {
+    padding-right: 30px;
+    left: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__link:not(:last-child) {
+    display: none;
+  }
+
+  .lastname {
+    display: none;
+  }
+
+  .project__description {
+    padding: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .project__description--para {
+    display: none;
+  }
+
+  .project__description--links {
+    justify-content: center;
+    display: flex;
+  }
+
+  .project__description--title {
+    line-height: 1;
+    font-size: 32px;
+  }
+
+  .project__description--sub-title {
+    text-align: center;
+    margin: 12px 0;
+  }
+}
+
+/* 
+
+draggy
+
+*/
+
+.dragon {
+  display: inline-block;
+  animation: animate-dragon 2000ms infinite ease-in-out;
+}
+
+@keyframes animate-dragon {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
