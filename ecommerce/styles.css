@@ -9,7 +9,6 @@
 
 */
 
-/* 39.33 */
 * {
   padding: 0;
   margin: 0;
@@ -217,6 +216,7 @@ button {
 button:active {
   transform: translateY(1px);
 }
+
 .btn {
   background-color: #7342d6;
   color: white;
@@ -234,6 +234,7 @@ button:active {
 .container {
   padding: 56px 0;
 }
+
 .row {
   width: 100%;
   max-width: 1200px;
@@ -337,6 +338,7 @@ BOOKS
   display: flex;
   flex-wrap: wrap;
 }
+
 .book {
   width: 25%;
   padding: 24px;
@@ -462,3 +464,4 @@ footer {
     margin-bottom: 24px;
   }
 }
+
